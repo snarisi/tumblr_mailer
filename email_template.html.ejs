@@ -1,0 +1,38 @@
+<html>
+<head>
+  <meta charset='utf-8'>
+</head>
+<body>
+  <p>Hey <%= firstName %>,</p>
+  <p>
+    How are you doing? 
+
+    <% if (numMonthsSinceContact > 0) { %>
+      I guess I haven't seen you in about <%= numMonthsSinceContact %> months. What 
+      have you been up to since then?      
+    <% } else { %>
+      What have you been up to?
+    <% } %>
+
+    I'm about to start learning to code full-time at Fullstack Academy, 
+    and I'm real excited. One of our first assignments was to create this 
+    automated email system that sends a customized email to people that 
+    we know, so that's what this. Sorry to spam you like that, but let's 
+    talk in a non-automated way soon.
+  </p>
+  <p>
+    Anyway, I'm going to be blogging about my experiences at Fullstack on my blog. 
+    You can check out my recent posts here:
+
+    <ul>
+      <% for (var i = 0; i < latestPosts.length; i++) { %>
+      <li><a href=<%= latestPosts[i].href %>><%= latestPosts[i].title %></a></li>
+      <% } %>
+    </ul>
+  </p>
+  <p>
+    Talk soon,<br>
+    Sam
+  </p>
+</body>
+</html>
